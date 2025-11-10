@@ -1,0 +1,83 @@
+@model TiendaOnline.MVC.Models.Producto
+
+@{
+    ViewData["Title"] = "Crear Producto";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card shadow">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="mb-0">
+                        <i class="bi bi-plus-circle"></i> Crear Nuevo Producto
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Create" method="post">
+                        <div class="mb-3">
+                            <label asp-for="Nombre" class="form-label fw-bold">Nombre del Producto</label>
+                            <input asp-for="Nombre" class="form-control" placeholder="Ej: Laptop HP" required />
+                            <span asp-validation-for="Nombre" class="text-danger"></span>
+                        </div>
+
+                        <div class="mb-3">
+                            <label asp-for="Descripcion" class="form-label fw-bold">Descripción</label>
+                            <textarea asp-for="Descripcion" class="form-control" rows="3" 
+                                      placeholder="Descripción detallada del producto"></textarea>
+                            <span asp-validation-for="Descripcion" class="text-danger"></span>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Precio" class="form-label fw-bold">Precio (S/.)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">S/.</span>
+                                    <input asp-for="Precio" type="number" step="0.01" class="form-control" 
+                                           placeholder="0.00" required />
+                                </div>
+                                <span asp-validation-for="Precio" class="text-danger"></span>
+                            </div>
+
+                            <div class="col-md-6 mb-3">
+                                <label asp-for="Stock" class="form-label fw-bold">Stock</label>
+                                <input asp-for="Stock" type="number" class="form-control" 
+                                       placeholder="Cantidad disponible" required />
+                                <span asp-validation-for="Stock" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label asp-for="Categoria" class="form-label fw-bold">Categoría</label>
+                            <select asp-for="Categoria" class="form-select">
+                                <option value="">-- Seleccione una categoría --</option>
+                                <option value="Computadoras">Computadoras</option>
+                                <option value="Accesorios">Accesorios</option>
+                                <option value="Monitores">Monitores</option>
+                                <option value="Almacenamiento">Almacenamiento</option>
+                                <option value="Audio">Audio</option>
+                                <option value="Periféricos">Periféricos</option>
+                                <option value="Componentes">Componentes</option>
+                            </select>
+                            <span asp-validation-for="Categoria" class="text-danger"></span>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a asp-action="Index" class="btn btn-secondary">
+                                <i class="bi bi-arrow-left"></i> Cancelar
+                            </a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-save"></i> Guardar Producto
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+}

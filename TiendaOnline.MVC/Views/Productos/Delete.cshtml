@@ -1,0 +1,100 @@
+@model TiendaOnline.MVC.Models.Producto
+
+@{
+    ViewData["Title"] = "Eliminar Producto";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card shadow border-danger">
+                <div class="card-header bg-danger text-white">
+                    <h3 class="mb-0">
+                        <i class="bi bi-exclamation-triangle-fill"></i> Eliminar Producto
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-warning" role="alert">
+                        <i class="bi bi-exclamation-circle-fill"></i>
+                        <strong>¡Advertencia!</strong> ¿Está seguro que desea eliminar este producto? Esta acción no se puede deshacer.
+                    </div>
+
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <strong class="text-muted">ID:</strong>
+                                </div>
+                                <div class="col-md-8">
+                                    <span class="badge bg-secondary">@Model.IdProducto</span>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <strong class="text-muted">Nombre:</strong>
+                                </div>
+                                <div class="col-md-8">
+                                    <strong>@Model.Nombre</strong>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <strong class="text-muted">Descripción:</strong>
+                                </div>
+                                <div class="col-md-8">
+                                    @(Model.Descripcion ?? "Sin descripción")
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <strong class="text-muted">Precio:</strong>
+                                </div>
+                                <div class="col-md-8">
+                                    <span class="text-success fw-bold">S/. @Model.Precio.ToString("N2")</span>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <strong class="text-muted">Stock:</strong>
+                                </div>
+                                <div class="col-md-8">
+                                    @Model.Stock unidades
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <strong class="text-muted">Categoría:</strong>
+                                </div>
+                                <div class="col-md-8">
+                                    <span class="badge bg-info">@Model.Categoria</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" asp-for="IdProducto" />
+                        
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a asp-action="Index" class="btn btn-secondary btn-lg">
+                                <i class="bi bi-arrow-left"></i> Cancelar
+                            </a>
+                            <button type="submit" class="btn btn-danger btn-lg">
+                                <i class="bi bi-trash-fill"></i> Eliminar Definitivamente
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+}

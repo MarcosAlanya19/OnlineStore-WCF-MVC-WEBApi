@@ -1,0 +1,115 @@
+@model TiendaOnline.MVC.Models.Producto
+
+@{
+ViewData["Title"] = "Detalles del Producto";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="card shadow">
+                <div class="card-header bg-info text-white">
+                    <h3 class="mb-0">
+                        <i class="bi bi-info-circle-fill"></i> Detalles del Producto
+                    </h3>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <strong class="text-muted">ID del Producto:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            <span class="badge bg-secondary fs-6">@Model.IdProducto</span>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <strong class="text-muted">Nombre:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            <h5>@Model.Nombre</h5>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <strong class="text-muted">Descripción:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            <p>@(Model.Descripcion ?? "Sin descripción")</p>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <strong class="text-muted">Precio:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            <h4 class="text-success">
+                                <i class="bi bi-currency-dollar"></i> S/. @Model.Precio.ToString("N2")
+                            </h4>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <strong class="text-muted">Stock:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            @if (Model.Stock > 10)
+                            {
+                            <span class="badge bg-success fs-6">
+                                    <i class="bi bi-check-circle"></i> @Model.Stock unidades disponibles
+                                </span>
+                            }
+                            else if (Model.Stock > 0)
+                            {
+                            <span class="badge bg-warning text-dark fs-6">
+                                    <i class="bi bi-exclamation-triangle"></i> Solo @Model.Stock unidades
+                                </span>
+                            }
+                            else
+                            {
+                            <span class="badge bg-danger fs-6">
+                                    <i class="bi bi-x-circle"></i> Agotado
+                                </span>
+                            }
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col-md-4">
+                            <strong class="text-muted">Categoría:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            <span class="badge bg-info fs-6">
+                                <i class="bi bi-tag-fill"></i> @Model.Categoria
+                            </span>
+                        </div>
+                    </div>
+
+                    <hr />
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-between">
+                        <a asp-action="Index" class="btn btn-secondary">
+                            <i class="bi bi-arrow-left"></i> Volver a la Lista
+                        </a>
+                        <div>
+                            <a asp-action="Edit" asp-route-id="@Model.IdProducto" class="btn btn-warning me-2">
+                                <i class="bi bi-pencil-fill"></i> Editar
+                            </a>
+                            <a asp-action="Delete" asp-route-id="@Model.IdProducto" class="btn btn-danger">
+                                <i class="bi bi-trash-fill"></i> Eliminar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+}
