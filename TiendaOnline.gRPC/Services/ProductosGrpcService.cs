@@ -10,13 +10,22 @@ public class ProductosGrpcService: ProductosService.ProductosServiceBase
         private readonly TiendaContext _context;
         private readonly ILogger<ProductosGrpcService> _logger;
 
+        /// <summary>
+        /// Inicializa el servicio gRPC de productos.
+        /// </summary>
         public ProductosGrpcService(TiendaContext context, ILogger<ProductosGrpcService> logger)
         {
             _context = context;
             _logger = logger;
         }
-
-        // Obtener todos los productos
+        
+        /// <summary>
+        /// Obtiene la lista completa de productos.
+        /// </summary>
+        /// <param name="request">Mensaje vacío requerido por gRPC.</param>
+        /// <param name="context">Contexto de la llamada remota.</param>
+        /// <returns>Listado de productos con estado y mensaje.</returns>
+        /// <exception cref="RpcException">Error interno al consultar la base de datos.</exception>
         public override async Task<ProductosResponse> GetProductos(Empty request, ServerCallContext context)
         {
             try
@@ -48,7 +57,13 @@ public class ProductosGrpcService: ProductosService.ProductosServiceBase
             }
         }
 
-        // Obtener producto por ID
+        /// <summary>
+        /// Obtiene un producto específico según su ID.
+        /// </summary>
+        /// <param name="request">Solicitud con el ID del producto.</param>
+        /// <param name="context">Contexto de ejecución del servidor gRPC.</param>
+        /// <returns>Datos del producto o un mensaje indicando que no fue encontrado.</returns>
+        /// <exception cref="RpcException">Error interno al obtener el producto.</exception>
         public override async Task<ProductoResponse> GetProductoById(ProductoRequest request, ServerCallContext context)
         {
             try
@@ -83,7 +98,13 @@ public class ProductosGrpcService: ProductosService.ProductosServiceBase
             }
         }
 
-        // Crear nuevo producto
+        /// <summary>
+        /// Crea un nuevo producto en la base de datos.
+        /// </summary>
+        /// <param name="request">Datos del producto a registrar.</param>
+        /// <param name="context">Contexto de la llamada gRPC.</param>
+        /// <returns>Producto creado con estado y mensaje.</returns>
+        /// <exception cref="RpcException">Error interno al guardar la información.</exception>
         public override async Task<ProductoResponse> CreateProducto(CreateProductoRequest request, ServerCallContext context)
         {
             try
@@ -119,7 +140,13 @@ public class ProductosGrpcService: ProductosService.ProductosServiceBase
             }
         }
 
-        // Actualizar producto
+        /// <summary>
+        /// Actualiza los datos de un producto existente.
+        /// </summary>
+        /// <param name="request">Información actualizada del producto.</param>
+        /// <param name="context">Contexto de la llamada remota.</param>
+        /// <returns>Producto actualizado o mensaje si no existe.</returns>
+        /// <exception cref="RpcException">Error interno al actualizar el producto.</exception>
         public override async Task<ProductoResponse> UpdateProducto(UpdateProductoRequest request, ServerCallContext context)
         {
             try
@@ -162,7 +189,13 @@ public class ProductosGrpcService: ProductosService.ProductosServiceBase
             }
         }
 
-        // Eliminar producto
+        /// <summary>
+        /// Elimina un producto según su ID.
+        /// </summary>
+        /// <param name="request">Solicitud con el ID del producto.</param>
+        /// <param name="context">Contexto de ejecución gRPC.</param>
+        /// <returns>Resultado de la operación con mensaje.</returns>
+        /// <exception cref="RpcException">Error interno al eliminar el producto.</exception>
         public override async Task<DeleteResponse> DeleteProducto(ProductoRequest request, ServerCallContext context)
         {
             try
