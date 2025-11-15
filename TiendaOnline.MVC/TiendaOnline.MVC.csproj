@@ -7,7 +7,27 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="Google.Protobuf" Version="3.33.0" />
+      <PackageReference Include="Grpc.Net.Client" Version="2.71.0" />
+      <PackageReference Include="Grpc.Tools" Version="2.76.0">
+        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        <PrivateAssets>all</PrivateAssets>
+      </PackageReference>
       <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.10" />
     </ItemGroup>
 
+<!--    <ItemGroup>-->
+<!--      <Protobuf Include="Protos\productos.proto">-->
+<!--        <GrpcServices>Server</GrpcServices>-->
+<!--        <Access>Public</Access>-->
+<!--        <ProtoCompile>True</ProtoCompile>-->
+<!--        <CompileOutputs>True</CompileOutputs>-->
+<!--        <OutputDir>obj\Debug/net9.0/</OutputDir>-->
+<!--        <Generator>MSBuild:Compile</Generator>-->
+<!--      </Protobuf>-->
+<!--    </ItemGroup>-->
+
+    <ItemGroup>
+        <Protobuf Include="Protos\productos.proto" GrpcServices="Client" />
+    </ItemGroup>
 </Project>

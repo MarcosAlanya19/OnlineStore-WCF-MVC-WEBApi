@@ -1,9 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "FqXdAHYczZc=",
+  "dgSpecHash": "BRJZWIusPYM=",
   "success": true,
   "projectFilePath": "/Users/marcosalanya/Documents/ME/TiendaOnline.WebAPI/TiendaOnline.MVC/TiendaOnline.MVC.csproj",
   "expectedPackageFiles": [
+    "/Users/marcosalanya/.nuget/packages/google.protobuf/3.33.0/google.protobuf.3.33.0.nupkg.sha512",
+    "/Users/marcosalanya/.nuget/packages/grpc.core.api/2.71.0/grpc.core.api.2.71.0.nupkg.sha512",
+    "/Users/marcosalanya/.nuget/packages/grpc.net.client/2.71.0/grpc.net.client.2.71.0.nupkg.sha512",
+    "/Users/marcosalanya/.nuget/packages/grpc.net.common/2.71.0/grpc.net.common.2.71.0.nupkg.sha512",
+    "/Users/marcosalanya/.nuget/packages/grpc.tools/2.76.0/grpc.tools.2.76.0.nupkg.sha512",
     "/Users/marcosalanya/.nuget/packages/microsoft.extensions.configuration/9.0.10/microsoft.extensions.configuration.9.0.10.nupkg.sha512",
     "/Users/marcosalanya/.nuget/packages/microsoft.extensions.configuration.abstractions/9.0.10/microsoft.extensions.configuration.abstractions.9.0.10.nupkg.sha512",
     "/Users/marcosalanya/.nuget/packages/microsoft.extensions.configuration.binder/9.0.10/microsoft.extensions.configuration.binder.9.0.10.nupkg.sha512",

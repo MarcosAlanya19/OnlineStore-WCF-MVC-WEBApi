@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+option csharp_namespace = "TiendaOnline.gRPC";
+
+package productos;
+
+// Servicio de Productos
+service ProductosService {
+  // Obtener todos los productos
+  rpc GetProductos (Empty) returns (ProductosResponse);
+
+  // Obtener un producto por ID
+  rpc GetProductoById (ProductoRequest) returns (ProductoResponse);
+
+  // Crear un nuevo producto
+  rpc CreateProducto (CreateProductoRequest) returns (ProductoResponse);
+
+  // Actualizar un producto existente
+  rpc UpdateProducto (UpdateProductoRequest) returns (ProductoResponse);
+
+  // Eliminar un producto
+  rpc DeleteProducto (ProductoRequest) returns (DeleteResponse);
+}
+
+// Mensajes (similar a DTOs)
+message Empty {}
+
+message ProductoRequest {
+  int32 id = 1;
+}
+
+message ProductoResponse {
+  int32 idProducto = 1;
+  string nombre = 2;
+  string descripcion = 3;
+  double precio = 4;
+  int32 stock = 5;
+  string categoria = 6;
+  bool success = 7;
+  string message = 8;
+}
+
+message ProductosResponse {
+  repeated ProductoResponse productos = 1;
+}
+
+message CreateProductoRequest {
+  string nombre = 1;
+  string descripcion = 2;
+  double precio = 3;
+  int32 stock = 4;
+  string categoria = 5;
+}
+
+message UpdateProductoRequest {
+  int32 idProducto = 1;
+  string nombre = 2;
+  string descripcion = 3;
+  double precio = 4;
+  int32 stock = 5;
+  string categoria = 6;
+}
+
+message DeleteResponse {
+  bool success = 1;
+  string message = 2;
+}

@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaOnline.WebAPI", "Tien
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaOnline.MVC", "TiendaOnline.MVC\TiendaOnline.MVC.csproj", "{58E3BA0F-600B-42A2-91A1-BA5855876B13}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaOnline.gRPC", "TiendaOnline.gRPC\TiendaOnline.gRPC.csproj", "{1C9D1ADF-7A61-425C-89A3-EC97A8A4A9C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{58E3BA0F-600B-42A2-91A1-BA5855876B13}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58E3BA0F-600B-42A2-91A1-BA5855876B13}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58E3BA0F-600B-42A2-91A1-BA5855876B13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C9D1ADF-7A61-425C-89A3-EC97A8A4A9C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C9D1ADF-7A61-425C-89A3-EC97A8A4A9C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C9D1ADF-7A61-425C-89A3-EC97A8A4A9C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C9D1ADF-7A61-425C-89A3-EC97A8A4A9C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

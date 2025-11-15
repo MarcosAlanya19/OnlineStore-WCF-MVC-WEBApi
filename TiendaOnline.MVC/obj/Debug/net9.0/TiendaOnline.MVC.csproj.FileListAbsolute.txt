@@ -108,3 +108,9 @@
 /Users/marcosalanya/Documents/ME/TiendaOnline.WebAPI/TiendaOnline.MVC/obj/Debug/net9.0/TiendaOnline.MVC.pdb
 /Users/marcosalanya/Documents/ME/TiendaOnline.WebAPI/TiendaOnline.MVC/obj/Debug/net9.0/TiendaOnline.MVC.genruntimeconfig.cache
 /Users/marcosalanya/Documents/ME/TiendaOnline.WebAPI/TiendaOnline.MVC/obj/Debug/net9.0/ref/TiendaOnline.MVC.dll
+/Users/marcosalanya/Documents/ME/TiendaOnline.WebAPI/TiendaOnline.MVC/bin/Debug/net9.0/Google.Protobuf.dll
+/Users/marcosalanya/Documents/ME/TiendaOnline.WebAPI/TiendaOnline.MVC/bin/Debug/net9.0/Grpc.Core.Api.dll
+/Users/marcosalanya/Documents/ME/TiendaOnline.WebAPI/TiendaOnline.MVC/bin/Debug/net9.0/Grpc.Net.Client.dll
+/Users/marcosalanya/Documents/ME/TiendaOnline.WebAPI/TiendaOnline.MVC/bin/Debug/net9.0/Grpc.Net.Common.dll
+/Users/marcosalanya/Documents/ME/TiendaOnline.WebAPI/TiendaOnline.MVC/obj/Debug/net9.0/TiendaOnline.MVC.csproj.AssemblyReference.cache
+/Users/marcosalanya/Documents/ME/TiendaOnline.WebAPI/TiendaOnline.MVC/obj/Debug/net9.0/TiendaOnline.MVC.sourcelink.json

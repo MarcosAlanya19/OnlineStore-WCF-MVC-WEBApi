@@ -163,3 +163,4 @@
 /Users/marcosalanya/Documents/ME/TiendaOnline.WebAPI/TiendaOnline.WebAPI/bin/Debug/net9.0/Swashbuckle.AspNetCore.Swagger.dll
 /Users/marcosalanya/Documents/ME/TiendaOnline.WebAPI/TiendaOnline.WebAPI/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /Users/marcosalanya/Documents/ME/TiendaOnline.WebAPI/TiendaOnline.WebAPI/bin/Debug/net9.0/Swashbuckle.AspNetCore.SwaggerUI.dll
+/Users/marcosalanya/Documents/ME/TiendaOnline.WebAPI/TiendaOnline.WebAPI/obj/Debug/net9.0/TiendaOnline.WebAPI.sourcelink.json

@@ -5,8 +5,19 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-// Configurar HttpClient para consumir el Web API
-builder.Services.AddHttpClient<IProductoService, ProductoService>();
+// builder.Services.AddHttpClient<IProductoService, ProductoService>();
+builder.Services.AddHttpClient<IProductoService, ProductoService>()
+    .ConfigurePrimaryHttpMessageHandler(() =>
+    {
+        return new HttpClientHandler
+        {
+            ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => true
+        };
+    });
+
+builder.Services.AddScoped<IProductoGrpcService, ProductoGrpcService>();
+builder.Services.AddScoped<IAuditoriaService, AuditoriaService>();
+
 
 var app = builder.Build();
 
